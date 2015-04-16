@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity BWOR4 is
+	port(	in0, in1, in2, in3: in std_logic;
+			output: out std_logic);
+end BWOR4;
+
+architecture behavior of BWOR4 is
+begin
+	output <= in0 or in1 or in2 or in3;
+end behavior;

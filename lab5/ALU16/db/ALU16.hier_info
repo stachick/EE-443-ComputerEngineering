@@ -1,0 +1,183 @@
+|ALU4
+A[0] => BWAND4:BWAND.in0[0]
+A[0] => BWOR4:BWOR.in0[0]
+A[0] => ADD4:SUBTRACT.A[0]
+A[1] => BWAND4:BWAND.in0[1]
+A[1] => BWOR4:BWOR.in0[1]
+A[1] => ADD4:SUBTRACT.A[1]
+A[2] => BWAND4:BWAND.in0[2]
+A[2] => BWOR4:BWOR.in0[2]
+A[2] => ADD4:SUBTRACT.A[2]
+A[3] => BWAND4:BWAND.in0[3]
+A[3] => BWOR4:BWOR.in0[3]
+A[3] => ADD4:SUBTRACT.A[3]
+B[0] => BWAND4:BWAND.in1[0]
+B[0] => BWOR4:BWOR.in1[0]
+B[0] => PINV4:BITINVERT.input[0]
+B[1] => BWAND4:BWAND.in1[1]
+B[1] => BWOR4:BWOR.in1[1]
+B[1] => PINV4:BITINVERT.input[1]
+B[2] => BWAND4:BWAND.in1[2]
+B[2] => BWOR4:BWOR.in1[2]
+B[2] => PINV4:BITINVERT.input[2]
+B[3] => BWAND4:BWAND.in1[3]
+B[3] => BWOR4:BWOR.in1[3]
+B[3] => PINV4:BITINVERT.input[3]
+CIN => ADD4:SUBTRACT.Cin
+LESS => MUX_4x4to1:selectOutput.in3[0]
+SEL[0] => MUX_4x4to1:selectOutput.sel[0]
+SEL[1] => MUX_4x4to1:selectOutput.sel[1]
+SEL[2] => PINV4:BITINVERT.ctrl
+F[0] <= MUX_4x4to1:selectOutput.output[0]
+F[1] <= MUX_4x4to1:selectOutput.output[1]
+F[2] <= MUX_4x4to1:selectOutput.output[2]
+F[3] <= MUX_4x4to1:selectOutput.output[3]
+COUT <= ADD4:SUBTRACT.Cout
+OVERFLOW <= ADD4:SUBTRACT.Overflow
+SET <= ADD4:SUBTRACT.F[3]
+ZERO <= ZERO.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|BWAND4:BWAND
+in0[0] => tempF.IN0
+in0[1] => tempF.IN0
+in0[2] => tempF.IN0
+in0[3] => tempF.IN0
+in1[0] => tempF.IN1
+in1[1] => tempF.IN1
+in1[2] => tempF.IN1
+in1[3] => tempF.IN1
+output[0] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|BWOR4:BWOR
+in0[0] => tempF.IN0
+in0[1] => tempF.IN0
+in0[2] => tempF.IN0
+in0[3] => tempF.IN0
+in1[0] => tempF.IN1
+in1[1] => tempF.IN1
+in1[2] => tempF.IN1
+in1[3] => tempF.IN1
+output[0] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= tempF.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|PINV4:BITINVERT
+input[0] => output.DATAA
+input[0] => output.DATAB
+input[1] => output.DATAA
+input[1] => output.DATAB
+input[2] => output.DATAA
+input[2] => output.DATAB
+input[3] => output.DATAA
+input[3] => output.DATAB
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+ctrl => output.OUTPUTSELECT
+ctrl => output.OUTPUTSELECT
+ctrl => output.OUTPUTSELECT
+ctrl => output.OUTPUTSELECT
+
+
+|ALU4|ADD4:SUBTRACT
+A[0] => fulladd:FA0.in0
+A[1] => fulladd:FA1.in0
+A[2] => fulladd:FA2.in0
+A[3] => fulladd:FA3.in0
+B[0] => fulladd:FA0.in1
+B[1] => fulladd:FA1.in1
+B[2] => fulladd:FA2.in1
+B[3] => fulladd:FA3.in1
+CIN => carryOut.IN1
+CIN => fulladd:FA0.CIN
+F[0] <= fulladd:FA0.s
+F[1] <= fulladd:FA1.s
+F[2] <= fulladd:FA2.s
+F[3] <= fulladd:FA3.s
+COUT <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
+OVERFLOW <= OVERFLOW.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|ADD4:SUBTRACT|fulladd:FA0
+CIN => s.IN1
+in0 => s.IN0
+in0 => g.IN0
+in1 => s.IN1
+in1 => g.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+p <= s.DB_MAX_OUTPUT_PORT_TYPE
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|ADD4:SUBTRACT|fulladd:FA1
+CIN => s.IN1
+in0 => s.IN0
+in0 => g.IN0
+in1 => s.IN1
+in1 => g.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+p <= s.DB_MAX_OUTPUT_PORT_TYPE
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|ADD4:SUBTRACT|fulladd:FA2
+CIN => s.IN1
+in0 => s.IN0
+in0 => g.IN0
+in1 => s.IN1
+in1 => g.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+p <= s.DB_MAX_OUTPUT_PORT_TYPE
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|ADD4:SUBTRACT|fulladd:FA3
+CIN => s.IN1
+in0 => s.IN0
+in0 => g.IN0
+in1 => s.IN1
+in1 => g.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+p <= s.DB_MAX_OUTPUT_PORT_TYPE
+g <= g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4|MUX_4x4to1:selectOutput
+in0[0] => output[0].DATAB
+in0[1] => output[1].DATAB
+in0[2] => output[2].DATAB
+in0[3] => output[3].DATAB
+in1[0] => output[0].DATAB
+in1[1] => output[1].DATAB
+in1[2] => output[2].DATAB
+in1[3] => output[3].DATAB
+in2[0] => output[0].DATAB
+in2[1] => output[1].DATAB
+in2[2] => output[2].DATAB
+in2[3] => output[3].DATAB
+in3[0] => output[0].DATAA
+in3[1] => output[1].DATAA
+in3[2] => output[2].DATAA
+in3[3] => output[3].DATAA
+sel[0] => Equal0.IN1
+sel[0] => Equal1.IN1
+sel[0] => Equal2.IN0
+sel[0] => Equal3.IN1
+sel[1] => Equal0.IN0
+sel[1] => Equal1.IN0
+sel[1] => Equal2.IN1
+sel[1] => Equal3.IN0
+output[0] <= output[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

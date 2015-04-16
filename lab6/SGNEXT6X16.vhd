@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity SGNEXT6X16 is
+	port( input:	in std_logic_vector(5 downto 0);
+		  output:  out std_logic_vector(15 downto 0));
+end SGNEXT6X16;
+
+architecture behavior of SGNEXT6X16 is
+begin
+
+	output(5 downto 0) <= input;
+	output(15 downto 6) <= (15 downto 6 => input(5));
+
+end behavior;

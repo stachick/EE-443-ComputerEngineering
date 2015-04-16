@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity BWAND4 is
+	port(	in0, in1, in2, in3: in std_logic;
+			output: out std_logic);
+end BWAND4;
+
+architecture behavior of BWAND4 is
+begin
+	output <= in0 and in1 and in2 and in3;
+end behavior;

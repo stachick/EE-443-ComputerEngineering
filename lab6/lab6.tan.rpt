@@ -1,0 +1,895 @@
+Classic Timing Analyzer report for lab6
+Wed Apr 08 02:52:23 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                          ;
++------------------------------+-------+---------------+-------------+--------------------------+---------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From                     ; To                        ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+--------------------------+---------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.819 ns    ; ADDR[3]                  ; REG8:\mem:15:reg8Low|Q[5] ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.982 ns   ; REG8:\mem:0:reg8Low|Q[0] ; DOUT[0]                   ; CLK        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 15.228 ns   ; ADDR[1]                  ; DOUT[0]                   ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.032 ns   ; DIN[14]                  ; REG8:\mem:0:reg8High|Q[6] ; --         ; CLK      ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                          ;                           ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+--------------------------+---------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+----------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From    ; To                         ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+----------------------------+----------+
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.819 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.792 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.786 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.786 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.703 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[3] ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; 6.671 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.630 ns   ; ADDR[3] ; REG8:\mem:1:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.607 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.607 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.607 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; 6.607 ns   ; ADDR[3] ; REG8:\mem:13:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; 6.605 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; 6.605 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.513 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8Low|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[3] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; 6.502 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; 6.493 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.489 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.489 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.488 ns   ; ADDR[3] ; REG8:\mem:15:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; 6.485 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.485 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.485 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.485 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.485 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.482 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.480 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.480 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.474 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.470 ns   ; ADDR[3] ; REG8:\mem:7:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.467 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.467 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.467 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.467 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.430 ns   ; ADDR[2] ; REG8:\mem:1:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.395 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.395 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.395 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.395 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.395 ns   ; ADDR[3] ; REG8:\mem:13:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.380 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.363 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.363 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.363 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.363 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8Low|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[3] ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; 6.353 ns   ; ADDR[3] ; REG8:\mem:12:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; 6.267 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.267 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.267 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.267 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.245 ns   ; ADDR[3] ; REG8:\mem:6:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[3] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; 6.217 ns   ; ADDR[3] ; REG8:\mem:14:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.209 ns   ; ADDR[3] ; REG8:\mem:14:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8Low|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[3] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; 6.196 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; 6.190 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.190 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.188 ns   ; ADDR[3] ; REG8:\mem:0:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.182 ns   ; ADDR[4] ; REG8:\mem:15:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.181 ns   ; ADDR[3] ; REG8:\mem:8:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.180 ns   ; ADDR[2] ; REG8:\mem:0:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.179 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.179 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.179 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.179 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.179 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.178 ns   ; ADDR[3] ; REG8:\mem:4:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.178 ns   ; ADDR[3] ; REG8:\mem:4:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.178 ns   ; ADDR[3] ; REG8:\mem:4:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.178 ns   ; ADDR[3] ; REG8:\mem:4:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[3] ; REG8:\mem:5:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.176 ns   ; ADDR[4] ; REG8:\mem:6:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.175 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.171 ns   ; ADDR[4] ; REG8:\mem:7:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.163 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.163 ns   ; ADDR[2] ; REG8:\mem:0:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.163 ns   ; ADDR[2] ; REG8:\mem:0:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.163 ns   ; ADDR[2] ; REG8:\mem:0:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; 6.161 ns   ; ADDR[3] ; REG8:\mem:4:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; 6.161 ns   ; ADDR[3] ; REG8:\mem:4:reg8Low|Q[2]   ; CLK      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;         ;                            ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------+----------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                             ;
++-----------------------------------------+-----------------------------------------------------+------------+----------------------------+----------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                       ; To       ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+----------------------------+----------+------------+
+; N/A                                     ; None                                                ; 11.982 ns  ; REG8:\mem:0:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.934 ns  ; REG8:\mem:0:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 11.786 ns  ; REG8:\mem:8:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.582 ns  ; REG8:\mem:2:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 11.460 ns  ; REG8:\mem:1:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.446 ns  ; REG8:\mem:4:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 11.328 ns  ; REG8:\mem:2:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 11.290 ns  ; REG8:\mem:0:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 11.263 ns  ; REG8:\mem:3:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.150 ns  ; REG8:\mem:3:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 11.118 ns  ; REG8:\mem:1:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 11.106 ns  ; REG8:\mem:1:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.104 ns  ; REG8:\mem:1:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.098 ns  ; REG8:\mem:0:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.092 ns  ; REG8:\mem:8:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 11.041 ns  ; REG8:\mem:0:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 11.018 ns  ; REG8:\mem:0:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.957 ns  ; REG8:\mem:10:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.912 ns  ; REG8:\mem:7:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.907 ns  ; REG8:\mem:3:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.890 ns  ; REG8:\mem:8:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.870 ns  ; REG8:\mem:8:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.863 ns  ; REG8:\mem:3:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.860 ns  ; REG8:\mem:12:reg8Low|Q[0]  ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.854 ns  ; REG8:\mem:0:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.829 ns  ; REG8:\mem:12:reg8High|Q[5] ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.820 ns  ; REG8:\mem:0:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.820 ns  ; REG8:\mem:8:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.781 ns  ; REG8:\mem:5:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.757 ns  ; REG8:\mem:8:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 10.733 ns  ; REG8:\mem:1:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.730 ns  ; REG8:\mem:3:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.719 ns  ; REG8:\mem:9:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 10.715 ns  ; REG8:\mem:8:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.687 ns  ; REG8:\mem:7:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.676 ns  ; REG8:\mem:12:reg8Low|Q[3]  ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.670 ns  ; REG8:\mem:12:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.664 ns  ; REG8:\mem:1:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.662 ns  ; REG8:\mem:9:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 10.661 ns  ; REG8:\mem:4:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.658 ns  ; REG8:\mem:0:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.650 ns  ; REG8:\mem:9:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.641 ns  ; REG8:\mem:5:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.640 ns  ; REG8:\mem:4:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.629 ns  ; REG8:\mem:1:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.599 ns  ; REG8:\mem:0:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.587 ns  ; REG8:\mem:4:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.584 ns  ; REG8:\mem:2:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.575 ns  ; REG8:\mem:1:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 10.535 ns  ; REG8:\mem:1:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 10.534 ns  ; REG8:\mem:2:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.512 ns  ; REG8:\mem:14:reg8Low|Q[0]  ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.473 ns  ; REG8:\mem:9:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.467 ns  ; REG8:\mem:3:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.465 ns  ; REG8:\mem:4:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.452 ns  ; REG8:\mem:10:reg8High|Q[2] ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 10.442 ns  ; REG8:\mem:13:reg8Low|Q[4]  ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.439 ns  ; REG8:\mem:12:reg8High|Q[6] ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 10.420 ns  ; REG8:\mem:4:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.416 ns  ; REG8:\mem:14:reg8Low|Q[5]  ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.414 ns  ; REG8:\mem:4:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.413 ns  ; REG8:\mem:0:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.407 ns  ; REG8:\mem:10:reg8High|Q[6] ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 10.403 ns  ; REG8:\mem:13:reg8Low|Q[3]  ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.381 ns  ; REG8:\mem:0:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.372 ns  ; REG8:\mem:3:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.359 ns  ; REG8:\mem:0:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 10.298 ns  ; REG8:\mem:9:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.282 ns  ; REG8:\mem:2:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.281 ns  ; REG8:\mem:2:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.269 ns  ; REG8:\mem:13:reg8High|Q[4] ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 10.267 ns  ; REG8:\mem:9:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.255 ns  ; REG8:\mem:1:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.252 ns  ; REG8:\mem:13:reg8High|Q[5] ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 10.252 ns  ; REG8:\mem:4:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.250 ns  ; REG8:\mem:10:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.239 ns  ; REG8:\mem:6:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.233 ns  ; REG8:\mem:14:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.232 ns  ; REG8:\mem:14:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.217 ns  ; REG8:\mem:10:reg8Low|Q[0]  ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.202 ns  ; REG8:\mem:11:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.195 ns  ; REG8:\mem:12:reg8Low|Q[5]  ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.172 ns  ; REG8:\mem:0:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.171 ns  ; REG8:\mem:1:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.150 ns  ; REG8:\mem:8:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 10.144 ns  ; REG8:\mem:3:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.116 ns  ; REG8:\mem:14:reg8Low|Q[3]  ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.114 ns  ; REG8:\mem:2:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.102 ns  ; REG8:\mem:12:reg8High|Q[2] ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 10.101 ns  ; REG8:\mem:14:reg8High|Q[6] ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 10.097 ns  ; REG8:\mem:9:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.063 ns  ; REG8:\mem:6:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 10.055 ns  ; REG8:\mem:5:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.043 ns  ; REG8:\mem:11:reg8High|Q[7] ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 10.037 ns  ; REG8:\mem:2:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.034 ns  ; REG8:\mem:4:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 10.030 ns  ; REG8:\mem:3:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 10.027 ns  ; REG8:\mem:4:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.996 ns   ; REG8:\mem:5:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.980 ns   ; REG8:\mem:9:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.973 ns   ; REG8:\mem:7:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.969 ns   ; REG8:\mem:0:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.963 ns   ; REG8:\mem:1:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.961 ns   ; REG8:\mem:5:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.955 ns   ; REG8:\mem:14:reg8Low|Q[2]  ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.952 ns   ; REG8:\mem:3:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.942 ns   ; REG8:\mem:1:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.938 ns   ; REG8:\mem:2:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.924 ns   ; REG8:\mem:2:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.922 ns   ; REG8:\mem:12:reg8High|Q[1] ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.911 ns   ; REG8:\mem:9:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.907 ns   ; REG8:\mem:14:reg8High|Q[2] ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.866 ns   ; REG8:\mem:5:reg8Low|Q[7]   ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.857 ns   ; REG8:\mem:12:reg8Low|Q[6]  ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.849 ns   ; REG8:\mem:13:reg8Low|Q[6]  ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.845 ns   ; REG8:\mem:12:reg8High|Q[3] ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.832 ns   ; REG8:\mem:7:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.825 ns   ; REG8:\mem:8:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.816 ns   ; REG8:\mem:10:reg8Low|Q[3]  ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.808 ns   ; REG8:\mem:8:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.805 ns   ; REG8:\mem:6:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.802 ns   ; REG8:\mem:7:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.785 ns   ; REG8:\mem:5:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.744 ns   ; REG8:\mem:15:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.739 ns   ; REG8:\mem:8:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.679 ns   ; REG8:\mem:10:reg8High|Q[5] ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.679 ns   ; REG8:\mem:10:reg8Low|Q[2]  ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.671 ns   ; REG8:\mem:3:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.664 ns   ; REG8:\mem:2:reg8High|Q[3]  ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.661 ns   ; REG8:\mem:5:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.640 ns   ; REG8:\mem:15:reg8High|Q[5] ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.625 ns   ; REG8:\mem:2:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.616 ns   ; REG8:\mem:15:reg8Low|Q[6]  ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.604 ns   ; REG8:\mem:13:reg8Low|Q[5]  ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.603 ns   ; REG8:\mem:6:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.592 ns   ; REG8:\mem:9:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.588 ns   ; REG8:\mem:3:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.584 ns   ; REG8:\mem:12:reg8Low|Q[4]  ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.581 ns   ; REG8:\mem:0:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.573 ns   ; REG8:\mem:6:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.561 ns   ; REG8:\mem:4:reg8High|Q[0]  ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.553 ns   ; REG8:\mem:11:reg8High|Q[0] ; DOUT[8]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.552 ns   ; REG8:\mem:4:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.549 ns   ; REG8:\mem:6:reg8High|Q[5]  ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.543 ns   ; REG8:\mem:12:reg8High|Q[7] ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.514 ns   ; REG8:\mem:11:reg8Low|Q[3]  ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.507 ns   ; REG8:\mem:2:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.501 ns   ; REG8:\mem:4:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.498 ns   ; REG8:\mem:15:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.496 ns   ; REG8:\mem:6:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.496 ns   ; REG8:\mem:6:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.487 ns   ; REG8:\mem:10:reg8High|Q[7] ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.484 ns   ; REG8:\mem:15:reg8Low|Q[4]  ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.476 ns   ; REG8:\mem:10:reg8Low|Q[5]  ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.454 ns   ; REG8:\mem:4:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.447 ns   ; REG8:\mem:4:reg8Low|Q[1]   ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.433 ns   ; REG8:\mem:3:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.421 ns   ; REG8:\mem:1:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.414 ns   ; REG8:\mem:5:reg8Low|Q[3]   ; DOUT[3]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.412 ns   ; REG8:\mem:12:reg8High|Q[4] ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.409 ns   ; REG8:\mem:11:reg8High|Q[3] ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.406 ns   ; REG8:\mem:3:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.406 ns   ; REG8:\mem:14:reg8High|Q[3] ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.397 ns   ; REG8:\mem:5:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 9.393 ns   ; REG8:\mem:11:reg8Low|Q[0]  ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.378 ns   ; REG8:\mem:3:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 9.378 ns   ; REG8:\mem:5:reg8Low|Q[0]   ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.377 ns   ; REG8:\mem:6:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.375 ns   ; REG8:\mem:13:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.367 ns   ; REG8:\mem:7:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.364 ns   ; REG8:\mem:12:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.363 ns   ; REG8:\mem:11:reg8Low|Q[7]  ; DOUT[7]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.361 ns   ; REG8:\mem:13:reg8High|Q[2] ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.360 ns   ; REG8:\mem:14:reg8High|Q[5] ; DOUT[13] ; CLK        ;
+; N/A                                     ; None                                                ; 9.340 ns   ; REG8:\mem:12:reg8Low|Q[2]  ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.337 ns   ; REG8:\mem:13:reg8Low|Q[1]  ; DOUT[1]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.329 ns   ; REG8:\mem:5:reg8High|Q[4]  ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.326 ns   ; REG8:\mem:2:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.315 ns   ; REG8:\mem:3:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.300 ns   ; REG8:\mem:13:reg8High|Q[1] ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.275 ns   ; REG8:\mem:6:reg8High|Q[2]  ; DOUT[10] ; CLK        ;
+; N/A                                     ; None                                                ; 9.274 ns   ; REG8:\mem:4:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 9.261 ns   ; REG8:\mem:8:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.258 ns   ; REG8:\mem:15:reg8High|Q[4] ; DOUT[12] ; CLK        ;
+; N/A                                     ; None                                                ; 9.251 ns   ; REG8:\mem:6:reg8High|Q[6]  ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 9.226 ns   ; REG8:\mem:9:reg8Low|Q[6]   ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.222 ns   ; REG8:\mem:15:reg8High|Q[3] ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.214 ns   ; REG8:\mem:7:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.199 ns   ; REG8:\mem:5:reg8Low|Q[2]   ; DOUT[2]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.186 ns   ; REG8:\mem:15:reg8Low|Q[0]  ; DOUT[0]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.171 ns   ; REG8:\mem:6:reg8High|Q[7]  ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.168 ns   ; REG8:\mem:8:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.149 ns   ; REG8:\mem:13:reg8High|Q[6] ; DOUT[14] ; CLK        ;
+; N/A                                     ; None                                                ; 9.147 ns   ; REG8:\mem:14:reg8High|Q[7] ; DOUT[15] ; CLK        ;
+; N/A                                     ; None                                                ; 9.144 ns   ; REG8:\mem:8:reg8Low|Q[4]   ; DOUT[4]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.141 ns   ; REG8:\mem:7:reg8Low|Q[5]   ; DOUT[5]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.126 ns   ; REG8:\mem:14:reg8Low|Q[6]  ; DOUT[6]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.124 ns   ; REG8:\mem:6:reg8High|Q[1]  ; DOUT[9]  ; CLK        ;
+; N/A                                     ; None                                                ; 9.118 ns   ; REG8:\mem:10:reg8High|Q[3] ; DOUT[11] ; CLK        ;
+; N/A                                     ; None                                                ; 9.115 ns   ; REG8:\mem:15:reg8High|Q[2] ; DOUT[10] ; CLK        ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                            ;          ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+----------------------------+----------+------------+
+
+
++------------------------------------------------------------------+
+; tpd                                                              ;
++-------+-------------------+-----------------+---------+----------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From    ; To       ;
++-------+-------------------+-----------------+---------+----------+
+; N/A   ; None              ; 15.228 ns       ; ADDR[1] ; DOUT[0]  ;
+; N/A   ; None              ; 14.750 ns       ; ADDR[2] ; DOUT[1]  ;
+; N/A   ; None              ; 14.748 ns       ; ADDR[1] ; DOUT[7]  ;
+; N/A   ; None              ; 14.700 ns       ; ADDR[2] ; DOUT[13] ;
+; N/A   ; None              ; 14.447 ns       ; ADDR[2] ; DOUT[9]  ;
+; N/A   ; None              ; 14.387 ns       ; ADDR[2] ; DOUT[11] ;
+; N/A   ; None              ; 14.367 ns       ; ADDR[4] ; DOUT[4]  ;
+; N/A   ; None              ; 14.363 ns       ; ADDR[1] ; DOUT[11] ;
+; N/A   ; None              ; 14.321 ns       ; ADDR[1] ; DOUT[13] ;
+; N/A   ; None              ; 14.302 ns       ; ADDR[4] ; DOUT[12] ;
+; N/A   ; None              ; 14.293 ns       ; ADDR[1] ; DOUT[3]  ;
+; N/A   ; None              ; 14.279 ns       ; ADDR[3] ; DOUT[4]  ;
+; N/A   ; None              ; 14.263 ns       ; ADDR[3] ; DOUT[10] ;
+; N/A   ; None              ; 14.245 ns       ; ADDR[2] ; DOUT[7]  ;
+; N/A   ; None              ; 14.160 ns       ; ADDR[2] ; DOUT[0]  ;
+; N/A   ; None              ; 14.157 ns       ; ADDR[3] ; DOUT[14] ;
+; N/A   ; None              ; 14.102 ns       ; ADDR[3] ; DOUT[1]  ;
+; N/A   ; None              ; 14.070 ns       ; ADDR[2] ; DOUT[15] ;
+; N/A   ; None              ; 14.067 ns       ; ADDR[1] ; DOUT[9]  ;
+; N/A   ; None              ; 13.989 ns       ; ADDR[4] ; DOUT[10] ;
+; N/A   ; None              ; 13.968 ns       ; ADDR[4] ; DOUT[6]  ;
+; N/A   ; None              ; 13.929 ns       ; ADDR[3] ; DOUT[6]  ;
+; N/A   ; None              ; 13.870 ns       ; ADDR[4] ; DOUT[8]  ;
+; N/A   ; None              ; 13.853 ns       ; ADDR[1] ; DOUT[15] ;
+; N/A   ; None              ; 13.806 ns       ; ADDR[3] ; DOUT[3]  ;
+; N/A   ; None              ; 13.696 ns       ; ADDR[2] ; DOUT[3]  ;
+; N/A   ; None              ; 13.664 ns       ; ADDR[3] ; DOUT[12] ;
+; N/A   ; None              ; 13.510 ns       ; ADDR[1] ; DOUT[2]  ;
+; N/A   ; None              ; 13.508 ns       ; ADDR[4] ; DOUT[14] ;
+; N/A   ; None              ; 13.491 ns       ; ADDR[2] ; DOUT[5]  ;
+; N/A   ; None              ; 13.259 ns       ; ADDR[3] ; DOUT[8]  ;
+; N/A   ; None              ; 13.245 ns       ; ADDR[1] ; DOUT[5]  ;
+; N/A   ; None              ; 13.179 ns       ; ADDR[4] ; DOUT[7]  ;
+; N/A   ; None              ; 13.030 ns       ; ADDR[3] ; DOUT[2]  ;
+; N/A   ; None              ; 12.968 ns       ; ADDR[4] ; DOUT[1]  ;
+; N/A   ; None              ; 12.783 ns       ; ADDR[3] ; DOUT[5]  ;
+; N/A   ; None              ; 12.749 ns       ; ADDR[1] ; DOUT[10] ;
+; N/A   ; None              ; 12.690 ns       ; ADDR[4] ; DOUT[0]  ;
+; N/A   ; None              ; 12.626 ns       ; RE      ; DOUT[0]  ;
+; N/A   ; None              ; 12.605 ns       ; RE      ; DOUT[7]  ;
+; N/A   ; None              ; 12.440 ns       ; ADDR[2] ; DOUT[2]  ;
+; N/A   ; None              ; 12.331 ns       ; ADDR[1] ; DOUT[8]  ;
+; N/A   ; None              ; 12.286 ns       ; ADDR[2] ; DOUT[4]  ;
+; N/A   ; None              ; 12.233 ns       ; ADDR[1] ; DOUT[1]  ;
+; N/A   ; None              ; 12.214 ns       ; ADDR[3] ; DOUT[13] ;
+; N/A   ; None              ; 12.200 ns       ; ADDR[1] ; DOUT[14] ;
+; N/A   ; None              ; 12.147 ns       ; ADDR[4] ; DOUT[15] ;
+; N/A   ; None              ; 12.059 ns       ; ADDR[1] ; DOUT[4]  ;
+; N/A   ; None              ; 11.993 ns       ; RE      ; DOUT[3]  ;
+; N/A   ; None              ; 11.964 ns       ; ADDR[4] ; DOUT[13] ;
+; N/A   ; None              ; 11.914 ns       ; ADDR[2] ; DOUT[6]  ;
+; N/A   ; None              ; 11.816 ns       ; ADDR[1] ; DOUT[6]  ;
+; N/A   ; None              ; 11.775 ns       ; ADDR[3] ; DOUT[11] ;
+; N/A   ; None              ; 11.513 ns       ; ADDR[3] ; DOUT[9]  ;
+; N/A   ; None              ; 11.401 ns       ; ADDR[3] ; DOUT[15] ;
+; N/A   ; None              ; 11.372 ns       ; ADDR[4] ; DOUT[11] ;
+; N/A   ; None              ; 11.371 ns       ; RE      ; DOUT[6]  ;
+; N/A   ; None              ; 11.354 ns       ; ADDR[3] ; DOUT[0]  ;
+; N/A   ; None              ; 11.340 ns       ; ADDR[3] ; DOUT[7]  ;
+; N/A   ; None              ; 11.137 ns       ; ADDR[2] ; DOUT[10] ;
+; N/A   ; None              ; 11.136 ns       ; ADDR[2] ; DOUT[12] ;
+; N/A   ; None              ; 11.113 ns       ; ADDR[4] ; DOUT[9]  ;
+; N/A   ; None              ; 11.040 ns       ; RE      ; DOUT[5]  ;
+; N/A   ; None              ; 10.953 ns       ; ADDR[1] ; DOUT[12] ;
+; N/A   ; None              ; 10.892 ns       ; RE      ; DOUT[4]  ;
+; N/A   ; None              ; 10.857 ns       ; ADDR[2] ; DOUT[14] ;
+; N/A   ; None              ; 10.742 ns       ; ADDR[4] ; DOUT[2]  ;
+; N/A   ; None              ; 10.699 ns       ; ADDR[4] ; DOUT[3]  ;
+; N/A   ; None              ; 10.661 ns       ; RE      ; DOUT[8]  ;
+; N/A   ; None              ; 10.634 ns       ; RE      ; DOUT[1]  ;
+; N/A   ; None              ; 10.614 ns       ; RE      ; DOUT[10] ;
+; N/A   ; None              ; 10.610 ns       ; RE      ; DOUT[14] ;
+; N/A   ; None              ; 10.585 ns       ; RE      ; DOUT[15] ;
+; N/A   ; None              ; 10.533 ns       ; ADDR[4] ; DOUT[5]  ;
+; N/A   ; None              ; 10.472 ns       ; ADDR[2] ; DOUT[8]  ;
+; N/A   ; None              ; 10.396 ns       ; RE      ; DOUT[13] ;
+; N/A   ; None              ; 10.380 ns       ; RE      ; DOUT[2]  ;
+; N/A   ; None              ; 10.375 ns       ; RE      ; DOUT[12] ;
+; N/A   ; None              ; 10.372 ns       ; RE      ; DOUT[9]  ;
+; N/A   ; None              ; 10.370 ns       ; RE      ; DOUT[11] ;
++-------+-------------------+-----------------+---------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+----------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From    ; To                         ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+----------------------------+----------+
+; N/A                                     ; None                                                ; -3.032 ns ; DIN[14] ; REG8:\mem:0:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.131 ns ; DIN[6]  ; REG8:\mem:4:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.133 ns ; DIN[6]  ; REG8:\mem:0:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.139 ns ; DIN[10] ; REG8:\mem:9:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.142 ns ; DIN[10] ; REG8:\mem:11:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.163 ns ; DIN[10] ; REG8:\mem:10:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.163 ns ; DIN[10] ; REG8:\mem:8:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.227 ns ; DIN[13] ; REG8:\mem:12:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; -3.247 ns ; DIN[5]  ; REG8:\mem:7:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.317 ns ; DIN[14] ; REG8:\mem:12:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; -3.319 ns ; DIN[14] ; REG8:\mem:3:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.319 ns ; DIN[5]  ; REG8:\mem:4:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.321 ns ; DIN[12] ; REG8:\mem:12:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.323 ns ; DIN[12] ; REG8:\mem:14:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.323 ns ; DIN[5]  ; REG8:\mem:8:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.331 ns ; DIN[3]  ; REG8:\mem:7:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.369 ns ; DIN[5]  ; REG8:\mem:12:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.374 ns ; DIN[6]  ; REG8:\mem:13:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.375 ns ; DIN[10] ; REG8:\mem:5:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.378 ns ; DIN[10] ; REG8:\mem:7:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.379 ns ; DIN[9]  ; REG8:\mem:15:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; -3.383 ns ; DIN[12] ; REG8:\mem:1:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.385 ns ; DIN[9]  ; REG8:\mem:7:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.386 ns ; DIN[9]  ; REG8:\mem:4:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.390 ns ; DIN[15] ; REG8:\mem:4:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.400 ns ; DIN[9]  ; REG8:\mem:3:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.403 ns ; DIN[10] ; REG8:\mem:3:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.407 ns ; DIN[10] ; REG8:\mem:2:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.429 ns ; DIN[1]  ; REG8:\mem:4:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.430 ns ; DIN[1]  ; REG8:\mem:14:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.430 ns ; DIN[1]  ; REG8:\mem:6:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.439 ns ; DIN[4]  ; REG8:\mem:4:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.440 ns ; DIN[7]  ; REG8:\mem:8:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.441 ns ; DIN[7]  ; REG8:\mem:4:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.442 ns ; DIN[4]  ; REG8:\mem:0:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.459 ns ; DIN[5]  ; REG8:\mem:9:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.463 ns ; DIN[5]  ; REG8:\mem:10:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.465 ns ; DIN[5]  ; REG8:\mem:14:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.466 ns ; DIN[3]  ; REG8:\mem:6:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.468 ns ; DIN[12] ; REG8:\mem:15:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.469 ns ; DIN[12] ; REG8:\mem:13:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.473 ns ; DIN[10] ; REG8:\mem:14:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.474 ns ; DIN[10] ; REG8:\mem:12:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.476 ns ; DIN[14] ; REG8:\mem:7:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.478 ns ; DIN[3]  ; REG8:\mem:9:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.479 ns ; DIN[14] ; REG8:\mem:5:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.479 ns ; DIN[3]  ; REG8:\mem:1:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.480 ns ; DIN[6]  ; REG8:\mem:8:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.482 ns ; DIN[14] ; REG8:\mem:9:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.483 ns ; DIN[8]  ; REG8:\mem:12:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -3.484 ns ; DIN[10] ; REG8:\mem:4:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.485 ns ; DIN[10] ; REG8:\mem:6:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.485 ns ; DIN[5]  ; REG8:\mem:2:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.486 ns ; DIN[3]  ; REG8:\mem:13:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.487 ns ; DIN[8]  ; REG8:\mem:8:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.488 ns ; DIN[1]  ; REG8:\mem:10:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.489 ns ; DIN[3]  ; REG8:\mem:15:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.491 ns ; DIN[1]  ; REG8:\mem:7:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.492 ns ; DIN[7]  ; REG8:\mem:1:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.502 ns ; DIN[13] ; REG8:\mem:1:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.502 ns ; DIN[1]  ; REG8:\mem:12:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.502 ns ; DIN[1]  ; REG8:\mem:8:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.503 ns ; DIN[13] ; REG8:\mem:0:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.507 ns ; DIN[7]  ; REG8:\mem:5:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.511 ns ; DIN[3]  ; REG8:\mem:11:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.512 ns ; DIN[5]  ; REG8:\mem:13:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.512 ns ; DIN[5]  ; REG8:\mem:5:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.515 ns ; DIN[3]  ; REG8:\mem:3:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.526 ns ; DIN[6]  ; REG8:\mem:3:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.536 ns ; DIN[15] ; REG8:\mem:12:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; -3.558 ns ; DIN[6]  ; REG8:\mem:14:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.560 ns ; DIN[6]  ; REG8:\mem:15:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.563 ns ; DIN[9]  ; REG8:\mem:13:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; -3.564 ns ; DIN[9]  ; REG8:\mem:5:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.599 ns ; DIN[9]  ; REG8:\mem:1:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.599 ns ; DIN[9]  ; REG8:\mem:0:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.602 ns ; DIN[14] ; REG8:\mem:13:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; -3.602 ns ; DIN[14] ; REG8:\mem:15:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; -3.605 ns ; DIN[11] ; REG8:\mem:0:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.623 ns ; DIN[10] ; REG8:\mem:1:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.623 ns ; DIN[10] ; REG8:\mem:0:reg8High|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.628 ns ; DIN[3]  ; REG8:\mem:8:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.630 ns ; DIN[3]  ; REG8:\mem:12:reg8Low|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.630 ns ; DIN[2]  ; REG8:\mem:8:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.630 ns ; DIN[0]  ; REG8:\mem:4:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.638 ns ; DIN[2]  ; REG8:\mem:10:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.642 ns ; DIN[2]  ; REG8:\mem:14:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.648 ns ; DIN[13] ; REG8:\mem:15:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; -3.650 ns ; DIN[13] ; REG8:\mem:13:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; -3.656 ns ; DIN[3]  ; REG8:\mem:5:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.665 ns ; DIN[15] ; REG8:\mem:9:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.665 ns ; DIN[15] ; REG8:\mem:8:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.665 ns ; DIN[14] ; REG8:\mem:1:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.665 ns ; DIN[6]  ; REG8:\mem:7:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.684 ns ; DIN[1]  ; REG8:\mem:9:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.685 ns ; DIN[1]  ; REG8:\mem:1:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.686 ns ; DIN[13] ; REG8:\mem:14:reg8High|Q[5] ; CLK      ;
+; N/A                                     ; None                                                ; -3.691 ns ; DIN[5]  ; REG8:\mem:6:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.696 ns ; DIN[14] ; REG8:\mem:8:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.697 ns ; DIN[8]  ; REG8:\mem:7:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.698 ns ; DIN[8]  ; REG8:\mem:10:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -3.699 ns ; DIN[6]  ; REG8:\mem:2:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.700 ns ; DIN[14] ; REG8:\mem:10:reg8High|Q[6] ; CLK      ;
+; N/A                                     ; None                                                ; -3.700 ns ; DIN[6]  ; REG8:\mem:6:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.711 ns ; DIN[2]  ; REG8:\mem:7:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.721 ns ; DIN[2]  ; REG8:\mem:2:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.724 ns ; DIN[2]  ; REG8:\mem:6:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.728 ns ; DIN[5]  ; REG8:\mem:0:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.730 ns ; DIN[13] ; REG8:\mem:2:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.730 ns ; DIN[12] ; REG8:\mem:9:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.732 ns ; DIN[12] ; REG8:\mem:0:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.733 ns ; DIN[5]  ; REG8:\mem:1:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.737 ns ; DIN[12] ; REG8:\mem:4:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.738 ns ; DIN[12] ; REG8:\mem:3:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.739 ns ; DIN[12] ; REG8:\mem:11:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.743 ns ; DIN[7]  ; REG8:\mem:0:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.743 ns ; DIN[3]  ; REG8:\mem:4:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.744 ns ; DIN[12] ; REG8:\mem:10:reg8High|Q[4] ; CLK      ;
+; N/A                                     ; None                                                ; -3.746 ns ; DIN[12] ; REG8:\mem:8:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.750 ns ; DIN[0]  ; REG8:\mem:6:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.750 ns ; DIN[0]  ; REG8:\mem:7:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.751 ns ; DIN[1]  ; REG8:\mem:5:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.753 ns ; DIN[1]  ; REG8:\mem:15:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.756 ns ; DIN[1]  ; REG8:\mem:13:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.758 ns ; DIN[12] ; REG8:\mem:7:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.758 ns ; DIN[0]  ; REG8:\mem:5:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.759 ns ; DIN[12] ; REG8:\mem:5:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.760 ns ; DIN[11] ; REG8:\mem:1:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.761 ns ; DIN[8]  ; REG8:\mem:6:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.761 ns ; DIN[8]  ; REG8:\mem:2:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.762 ns ; DIN[11] ; REG8:\mem:2:reg8High|Q[3]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.770 ns ; DIN[3]  ; REG8:\mem:2:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.771 ns ; DIN[3]  ; REG8:\mem:0:reg8Low|Q[3]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.773 ns ; DIN[5]  ; REG8:\mem:15:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.774 ns ; DIN[2]  ; REG8:\mem:12:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.777 ns ; DIN[1]  ; REG8:\mem:3:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.778 ns ; DIN[4]  ; REG8:\mem:12:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.781 ns ; DIN[4]  ; REG8:\mem:8:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.782 ns ; DIN[1]  ; REG8:\mem:11:reg8Low|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.785 ns ; DIN[8]  ; REG8:\mem:9:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.786 ns ; DIN[8]  ; REG8:\mem:1:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.787 ns ; DIN[9]  ; REG8:\mem:10:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; -3.787 ns ; DIN[9]  ; REG8:\mem:8:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.787 ns ; DIN[9]  ; REG8:\mem:11:reg8High|Q[1] ; CLK      ;
+; N/A                                     ; None                                                ; -3.788 ns ; DIN[6]  ; REG8:\mem:12:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.790 ns ; DIN[10] ; REG8:\mem:13:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.790 ns ; DIN[9]  ; REG8:\mem:9:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.791 ns ; DIN[15] ; REG8:\mem:11:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; -3.791 ns ; DIN[15] ; REG8:\mem:3:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.791 ns ; DIN[10] ; REG8:\mem:15:reg8High|Q[2] ; CLK      ;
+; N/A                                     ; None                                                ; -3.794 ns ; DIN[4]  ; REG8:\mem:9:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.796 ns ; DIN[9]  ; REG8:\mem:2:reg8High|Q[1]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.798 ns ; DIN[7]  ; REG8:\mem:7:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.799 ns ; DIN[4]  ; REG8:\mem:1:reg8Low|Q[4]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.804 ns ; DIN[2]  ; REG8:\mem:15:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.804 ns ; DIN[2]  ; REG8:\mem:13:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.808 ns ; DIN[5]  ; REG8:\mem:3:reg8Low|Q[5]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.809 ns ; DIN[14] ; REG8:\mem:2:reg8High|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.810 ns ; DIN[5]  ; REG8:\mem:11:reg8Low|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.811 ns ; DIN[1]  ; REG8:\mem:2:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.812 ns ; DIN[1]  ; REG8:\mem:0:reg8Low|Q[1]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.816 ns ; DIN[13] ; REG8:\mem:7:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.817 ns ; DIN[2]  ; REG8:\mem:11:reg8Low|Q[2]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.817 ns ; DIN[2]  ; REG8:\mem:3:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.820 ns ; DIN[2]  ; REG8:\mem:1:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.821 ns ; DIN[2]  ; REG8:\mem:9:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.855 ns ; DIN[7]  ; REG8:\mem:6:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.860 ns ; DIN[7]  ; REG8:\mem:2:reg8Low|Q[7]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.872 ns ; DIN[6]  ; REG8:\mem:1:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.892 ns ; DIN[13] ; REG8:\mem:6:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.898 ns ; DIN[4]  ; REG8:\mem:15:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.900 ns ; DIN[4]  ; REG8:\mem:13:reg8Low|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.904 ns ; DIN[12] ; REG8:\mem:2:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.906 ns ; DIN[12] ; REG8:\mem:6:reg8High|Q[4]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.921 ns ; DIN[15] ; REG8:\mem:14:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; -3.926 ns ; DIN[15] ; REG8:\mem:5:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.926 ns ; DIN[15] ; REG8:\mem:7:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.948 ns ; DIN[0]  ; REG8:\mem:0:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.949 ns ; DIN[0]  ; REG8:\mem:2:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.953 ns ; DIN[6]  ; REG8:\mem:10:reg8Low|Q[6]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.955 ns ; DIN[0]  ; REG8:\mem:12:reg8Low|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.955 ns ; DIN[0]  ; REG8:\mem:1:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.956 ns ; DIN[0]  ; REG8:\mem:8:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.958 ns ; DIN[0]  ; REG8:\mem:9:reg8Low|Q[0]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.965 ns ; DIN[13] ; REG8:\mem:5:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.968 ns ; DIN[15] ; REG8:\mem:10:reg8High|Q[7] ; CLK      ;
+; N/A                                     ; None                                                ; -3.970 ns ; DIN[13] ; REG8:\mem:4:reg8High|Q[5]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.970 ns ; DIN[8]  ; REG8:\mem:14:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -3.970 ns ; DIN[2]  ; REG8:\mem:5:reg8Low|Q[2]   ; CLK      ;
+; N/A                                     ; None                                                ; -3.977 ns ; DIN[15] ; REG8:\mem:2:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.978 ns ; DIN[15] ; REG8:\mem:6:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.991 ns ; DIN[8]  ; REG8:\mem:3:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.992 ns ; DIN[8]  ; REG8:\mem:11:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -3.997 ns ; DIN[15] ; REG8:\mem:0:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -3.998 ns ; DIN[15] ; REG8:\mem:1:reg8High|Q[7]  ; CLK      ;
+; N/A                                     ; None                                                ; -4.000 ns ; DIN[8]  ; REG8:\mem:15:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -4.003 ns ; DIN[8]  ; REG8:\mem:13:reg8High|Q[0] ; CLK      ;
+; N/A                                     ; None                                                ; -4.004 ns ; DIN[6]  ; REG8:\mem:9:reg8Low|Q[6]   ; CLK      ;
+; N/A                                     ; None                                                ; -4.006 ns ; DIN[8]  ; REG8:\mem:5:reg8High|Q[0]  ; CLK      ;
+; N/A                                     ; None                                                ; -4.013 ns ; DIN[15] ; REG8:\mem:13:reg8High|Q[7] ; CLK      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;         ;                            ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------+----------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Apr 08 02:52:21 2015
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off lab6 -c lab6 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK" is an undefined clock
+Info: No valid register-to-register data paths exist for clock "CLK"
+Info: tsu for register "REG8:\mem:15:reg8Low|Q[0]" (data pin = "ADDR[3]", clock pin = "CLK") is 6.819 ns
+    Info: + Longest pin to register delay is 9.525 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D12; Fanout = 68; PIN Node = 'ADDR[3]'
+        Info: 2: + IC(5.776 ns) + CELL(0.438 ns) = 7.054 ns; Loc. = LCCOMB_X22_Y30_N24; Fanout = 4; COMB Node = 'writing[7]~0'
+        Info: 3: + IC(0.270 ns) + CELL(0.275 ns) = 7.599 ns; Loc. = LCCOMB_X22_Y30_N12; Fanout = 16; COMB Node = 'writing[15]~13'
+        Info: 4: + IC(1.266 ns) + CELL(0.660 ns) = 9.525 ns; Loc. = LCFF_X25_Y29_N19; Fanout = 1; REG Node = 'REG8:\mem:15:reg8Low|Q[0]'
+        Info: Total cell delay = 2.213 ns ( 23.23 % )
+        Info: Total interconnect delay = 7.312 ns ( 76.77 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 2.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 256; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X25_Y29_N19; Fanout = 1; REG Node = 'REG8:\mem:15:reg8Low|Q[0]'
+        Info: Total cell delay = 1.536 ns ( 57.53 % )
+        Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+Info: tco from clock "CLK" to destination pin "DOUT[0]" through register "REG8:\mem:0:reg8Low|Q[0]" is 11.982 ns
+    Info: + Longest clock path from clock "CLK" to source register is 2.660 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 256; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.006 ns) + CELL(0.537 ns) = 2.660 ns; Loc. = LCFF_X23_Y28_N11; Fanout = 1; REG Node = 'REG8:\mem:0:reg8Low|Q[0]'
+        Info: Total cell delay = 1.536 ns ( 57.74 % )
+        Info: Total interconnect delay = 1.124 ns ( 42.26 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 9.072 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X23_Y28_N11; Fanout = 1; REG Node = 'REG8:\mem:0:reg8Low|Q[0]'
+        Info: 2: + IC(0.788 ns) + CELL(0.419 ns) = 1.207 ns; Loc. = LCCOMB_X23_Y29_N26; Fanout = 1; COMB Node = 'DOUT[0]~19'
+        Info: 3: + IC(0.736 ns) + CELL(0.438 ns) = 2.381 ns; Loc. = LCCOMB_X23_Y28_N8; Fanout = 1; COMB Node = 'DOUT[0]~20'
+        Info: 4: + IC(0.923 ns) + CELL(0.438 ns) = 3.742 ns; Loc. = LCCOMB_X21_Y29_N26; Fanout = 1; COMB Node = 'DOUT[0]$latch~7'
+        Info: 5: + IC(0.686 ns) + CELL(0.437 ns) = 4.865 ns; Loc. = LCCOMB_X21_Y29_N4; Fanout = 1; COMB Node = 'DOUT[0]$latch'
+        Info: 6: + IC(1.409 ns) + CELL(2.798 ns) = 9.072 ns; Loc. = PIN_C8; Fanout = 0; PIN Node = 'DOUT[0]'
+        Info: Total cell delay = 4.530 ns ( 49.93 % )
+        Info: Total interconnect delay = 4.542 ns ( 50.07 % )
+Info: Longest tpd from source pin "ADDR[1]" to destination pin "DOUT[0]" is 15.228 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_B9; Fanout = 82; PIN Node = 'ADDR[1]'
+    Info: 2: + IC(6.075 ns) + CELL(0.438 ns) = 7.363 ns; Loc. = LCCOMB_X23_Y29_N26; Fanout = 1; COMB Node = 'DOUT[0]~19'
+    Info: 3: + IC(0.736 ns) + CELL(0.438 ns) = 8.537 ns; Loc. = LCCOMB_X23_Y28_N8; Fanout = 1; COMB Node = 'DOUT[0]~20'
+    Info: 4: + IC(0.923 ns) + CELL(0.438 ns) = 9.898 ns; Loc. = LCCOMB_X21_Y29_N26; Fanout = 1; COMB Node = 'DOUT[0]$latch~7'
+    Info: 5: + IC(0.686 ns) + CELL(0.437 ns) = 11.021 ns; Loc. = LCCOMB_X21_Y29_N4; Fanout = 1; COMB Node = 'DOUT[0]$latch'
+    Info: 6: + IC(1.409 ns) + CELL(2.798 ns) = 15.228 ns; Loc. = PIN_C8; Fanout = 0; PIN Node = 'DOUT[0]'
+    Info: Total cell delay = 5.399 ns ( 35.45 % )
+    Info: Total interconnect delay = 9.829 ns ( 64.55 % )
+Info: th for register "REG8:\mem:0:reg8High|Q[6]" (data pin = "DIN[14]", clock pin = "CLK") is -3.032 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 2.690 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 256; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.036 ns) + CELL(0.537 ns) = 2.690 ns; Loc. = LCFF_X27_Y32_N9; Fanout = 1; REG Node = 'REG8:\mem:0:reg8High|Q[6]'
+        Info: Total cell delay = 1.536 ns ( 57.10 % )
+        Info: Total interconnect delay = 1.154 ns ( 42.90 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 5.988 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.880 ns) = 0.880 ns; Loc. = PIN_J10; Fanout = 16; PIN Node = 'DIN[14]'
+        Info: 2: + IC(4.875 ns) + CELL(0.149 ns) = 5.904 ns; Loc. = LCCOMB_X27_Y32_N8; Fanout = 1; COMB Node = 'REG8:\mem:0:reg8High|Q[6]~feeder'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 5.988 ns; Loc. = LCFF_X27_Y32_N9; Fanout = 1; REG Node = 'REG8:\mem:0:reg8High|Q[6]'
+        Info: Total cell delay = 1.113 ns ( 18.59 % )
+        Info: Total interconnect delay = 4.875 ns ( 81.41 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 179 megabytes
+    Info: Processing ended: Wed Apr 08 02:52:25 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:00
+
+
